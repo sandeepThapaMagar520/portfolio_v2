@@ -1,10 +1,12 @@
 "use client";
 
 import { ArrowUpRight, Github, Instagram, Linkedin, Mail, MessageCircle, Plus, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { profile } from "../content/site";
 
 export function ContactLauncher() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -23,6 +25,8 @@ export function ContactLauncher() {
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
+
+  if (pathname === "/contact") return null;
 
   return (
     <div className={`floating-contact ${open ? "is-open" : ""}`} ref={rootRef}>

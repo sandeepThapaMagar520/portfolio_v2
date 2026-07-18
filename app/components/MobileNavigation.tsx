@@ -3,11 +3,13 @@
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { navigation, profile } from "../content/site";
 
 export function MobileNavigation() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -76,7 +78,16 @@ export function MobileNavigation() {
           </div>
           <nav>
             {navigation.map(({ number, label, href }) => (
-              <Link key={href} href={href} onClick={close}><span>{number}</span>{label}<ArrowUpRight aria-hidden="true" /></Link>
+              <Link
+                key={href}
+                href={href}
+                onClick={close}
+                aria-current={pathname === href ? "page" : undefined}
+              >
+                <span>{number}</span>
+                <strong>{label}</strong>
+                <ArrowUpRight aria-hidden="true" />
+              </Link>
             ))}
           </nav>
           <div className="mobile-menu-footer"><a href={`mailto:${profile.email}`}>{profile.email}</a><span>{profile.location}</span></div>
