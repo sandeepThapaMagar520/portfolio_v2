@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
+import { RouteScrollReset } from "./components/RouteScrollReset";
 import { MotionObserver } from "./components/motion/MotionObserver";
 import "./globals.css";
 
@@ -100,6 +101,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <a className="skip-link" href="#main-content">
           Skip to main content
         </a>
+        <RouteScrollReset />
         <MotionObserver />
         {children}
       </body>
