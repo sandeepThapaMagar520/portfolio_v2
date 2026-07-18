@@ -4,6 +4,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { navigation, profile } from "../content/site";
 
 export function MobileNavigation() {
@@ -67,7 +68,7 @@ export function MobileNavigation() {
       <button ref={triggerRef} className="menu-button" onClick={() => setOpen(true)} aria-label="Open navigation menu" aria-expanded={open} aria-controls="mobile-navigation-dialog">
         <Menu aria-hidden="true" />
       </button>
-      {open && (
+      {open && createPortal(
         <div ref={dialogRef} className="mobile-menu" id="mobile-navigation-dialog" role="dialog" aria-modal="true" aria-label="Primary navigation menu">
           <div className="mobile-menu-top">
             <Image className="brand-signature" src="/assets/sandeep-signature.png" alt="" width={180} height={50} />
@@ -79,7 +80,8 @@ export function MobileNavigation() {
             ))}
           </nav>
           <div className="mobile-menu-footer"><a href={`mailto:${profile.email}`}>{profile.email}</a><span>{profile.location}</span></div>
-        </div>
+        </div>,
+        document.body,
       )}
     </>
   );
