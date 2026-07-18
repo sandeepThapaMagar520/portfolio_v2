@@ -5,7 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/api/", "/admin/", "/private/"],
     },
-    sitemap: "https://sandeepthapamagar.com.np/sitemap.xml",
+    sitemap: "https://www.sandeepthapamagar.com.np/sitemap.xml",
   };
 }

@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sandeepthapamagar.com.np"),
+  metadataBase: new URL("https://www.sandeepthapamagar.com.np"),
   title: {
     default: "Sandeep Thapa Magar — Operations, Product & Technology",
     template: "%s | Sandeep Thapa Magar",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   keywords: ["Sandeep Thapa Magar", "Chief Operating Officer", "Software Engineer", "Product Strategy", "Nepal"],
-  authors: [{ name: "Sandeep Thapa Magar", url: "https://sandeepthapamagar.com.np" }],
+  authors: [{ name: "Sandeep Thapa Magar", url: "https://www.sandeepthapamagar.com.np" }],
   creator: "Sandeep Thapa Magar",
   openGraph: {
     title: "Sandeep Thapa Magar — Operations, Product & Technology",
@@ -59,10 +59,10 @@ export const metadata: Metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://sandeepthapamagar.com.np/#person",
+  "@id": "https://www.sandeepthapamagar.com.np/#person",
   name: "Sandeep Thapa Magar",
-  url: "https://sandeepthapamagar.com.np",
-  image: "https://sandeepthapamagar.com.np/assets/sandeep-portrait.webp",
+  url: "https://www.sandeepthapamagar.com.np",
+  image: "https://www.sandeepthapamagar.com.np/assets/sandeep-portrait.webp",
   description:
     "Operations leader and software engineer focused on product development, team systems, and practical digital platforms.",
   sameAs: [
@@ -75,13 +75,13 @@ const personSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://sandeepthapamagar.com.np/#website",
+  "@id": "https://www.sandeepthapamagar.com.np/#website",
   name: "Sandeep Thapa Magar",
-  url: "https://sandeepthapamagar.com.np",
+  url: "https://www.sandeepthapamagar.com.np",
   description:
     "Portfolio of Sandeep Thapa Magar, combining operations leadership, product thinking and software engineering to build practical digital products.",
-  author: { "@id": "https://sandeepthapamagar.com.np/#person" },
-  creator: { "@id": "https://sandeepthapamagar.com.np/#person" },
+  author: { "@id": "https://www.sandeepthapamagar.com.np/#person" },
+  creator: { "@id": "https://www.sandeepthapamagar.com.np/#person" },
 };
 
 const structuredData = JSON.stringify([personSchema, websiteSchema]).replace(/</g, "\\u003c");
