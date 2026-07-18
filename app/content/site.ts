@@ -19,8 +19,24 @@ export const profile = {
 } as const;
 
 export const capabilityGroups = [
-  { title: "Leadership & Operations", skills: ["Operations Management", "Team Coordination", "Remote Team Leadership", "Strategic Thinking", "Performance Management", "Recruitment & Onboarding"] },
-  { title: "Product & Delivery", skills: ["Product Planning", "Requirements Analysis", "Workflow Design", "Feature Prioritisation", "Project Coordination", "Testing & Delivery"] },
-  { title: "Training & Communication", skills: ["Technical Training", "Employee Mentoring", "Learning Plans", "Client Communication", "Stakeholder Coordination", "Team Onboarding"] },
-  { title: "Technology", skills: ["Next.js", "Flutter", "Spring Boot", "PostgreSQL", "Supabase", "REST APIs", "Git & GitHub", "Cloudinary", "Render", "Vercel"] },
+  {
+    title: "Leadership & Operations",
+    evidence: "Coordinates daily operations, delivery follow-through, internal workflows, reporting structures, onboarding, and cross-team communication.",
+    skills: ["Operations Management", "Team Coordination", "Workflow Improvement", "Accountability", "Reporting", "Recruitment & Onboarding"],
+  },
+  {
+    title: "Product & Delivery",
+    evidence: "Shapes requirements, product workflows, priorities, interface decisions, testing, and delivery planning—including an independent product in development.",
+    skills: ["Product Planning", "Requirements Analysis", "Workflow Design", "Feature Prioritisation", "Project Coordination", "Testing & Delivery"],
+  },
+  {
+    title: "Training & Communication",
+    evidence: "Has prepared practical learning plans, conducted technical training, supported onboarding, and provided structured probation feedback.",
+    skills: ["Technical Training", "Learning Plans", "Structured Feedback", "Client Communication", "Stakeholder Coordination", "Team Onboarding"],
+  },
+  {
+    title: "Technology",
+    evidence: "Implements full-stack applications across interfaces, APIs, databases, testing, source control, and cloud deployment.",
+    skills: ["Next.js", "Flutter", "Spring Boot", "PostgreSQL", "Supabase", "REST APIs", "Git & GitHub", "Render", "Vercel"],
+  },
 ] as const;

@@ -9,13 +9,13 @@ export default function AboutPage() {
   return (
     <main id="main-content" tabIndex={-1}>
       <SiteHeader />
-      <PageIntro number="01" label="About" backdrop="ABOUT" context="People × Product × Technology" title={<>I work where people, products, and <em>technology meet.</em></>} copy="A multidisciplinary technology professional focused on making teams, products, and systems work better together." />
+      <PageIntro number="01" label="About" backdrop="ABOUT" context="People × Product × Technology" title={<>I work where people, products, and <em>technology meet.</em></>} copy="A career growing from customer support into engineering, training, product building, and operations leadership." />
       <section className="about-page-story section-shell" data-reveal>
         <div className="about-page-image"><Image src="/assets/sandeep-portrait.webp" alt="Sandeep Thapa Magar seated outdoors" fill sizes="(max-width: 760px) calc(100vw - 36px), 45vw" /></div>
         <div>
-          <p className="about-big">I&apos;m Sandeep Thapa Magar, a technology and operations professional based in Nepal.</p>
-          <p>My experience covers business operations, remote team coordination, digital product planning, software development, employee training, and project delivery.</p>
-          <p>I enjoy taking an unstructured problem, understanding how the process works, organising the people and responsibilities involved, and helping transform the idea into a practical system.</p>
+          <p className="about-big">I&apos;m Sandeep Thapa Magar, an operations leader and software engineer based in Nepal.</p>
+          <p>I began in customer-facing administration before moving into full-stack engineering, technical training, and onboarding.</p>
+          <p>Today, I lead operations while developing independent products alongside that work.</p>
           <div className="about-facts"><span><small>BASED IN</small>Kathmandu, Nepal</span><span><small>CURRENT ROLE</small>Chief Operating Officer</span><span><small>FOCUS</small>People × Product × Technology</span></div>
         </div>
       </section>
@@ -29,7 +29,7 @@ export default function AboutPage() {
         <div className="section-shell">
           <div className="eyebrow"><span>02</span>Capabilities</div>
           <h2>A blend of leadership, product thinking, and technology.</h2>
-          <div className="capability-groups" data-reveal>{capabilityGroups.map(({ title, skills }, index) => <article key={title} style={{ "--stagger": `${index * 55}ms` } as React.CSSProperties}><span>0{index+1}</span><h3>{title}</h3><div>{skills.map(skill=><i key={skill}>{skill}</i>)}</div></article>)}</div>
+          <div className="capability-groups" data-reveal>{capabilityGroups.map(({ title, evidence, skills }, index) => <article key={title} style={{ "--stagger": `${index * 55}ms` } as React.CSSProperties}><span>0{index+1}</span><h3>{title}</h3><p>{evidence}</p><div>{skills.map(skill=><i key={skill}>{skill}</i>)}</div></article>)}</div>
         </div>
       </section>
       <section className="education-section section-shell" data-reveal>
