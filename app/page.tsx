@@ -1,74 +1,53 @@
-"use client";
-
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, ArrowRight, ArrowUpRight, Download, Sparkles } from "lucide-react";
-import { useState } from "react";
-import { SiteFooter, SiteNav } from "./components/SiteChrome";
-
-const reveal = {
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-};
+import { ArrowDown, ArrowRight, ArrowUpRight, Download } from "lucide-react";
+import Link from "next/link";
+import { DisciplineTicker } from "./components/motion/DisciplineTicker";
+import { LoopingEmphasis } from "./components/motion/LoopingEmphasis";
+import { SiteFooter } from "./components/SiteFooter";
+import { SiteHeader } from "./components/SiteHeader";
 
 export default function Home() {
-  const reduceMotion = useReducedMotion();
-  const [pointer, setPointer] = useState({ x: 50, y: 50 });
-
-  const followPointer = (event: React.MouseEvent<HTMLElement>) => {
-    if (reduceMotion) return;
-    const box = event.currentTarget.getBoundingClientRect();
-    setPointer({
-      x: ((event.clientX - box.left) / box.width) * 100,
-      y: ((event.clientY - box.top) / box.height) * 100,
-    });
-  };
-
   return (
-    <main className="home-v2">
-      <SiteNav />
+    <main id="main-content" tabIndex={-1} className="home-v2">
+      <SiteHeader />
 
-      <section className="v2-hero" onMouseMove={followPointer}>
+      <section className="v2-hero" data-ambient>
         <div className="v2-grid" />
-        <div className="v2-cursor-glow" style={{ left: `${pointer.x}%`, top: `${pointer.y}%` }} />
 
         <div className="v2-hero-copy">
-          <motion.div {...reveal} transition={{ duration: .55 }} className="v2-intro">
+          <div className="v2-intro">
             <span><i /> Available for meaningful opportunities</span>
             <span>Kathmandu, Nepal</span>
-          </motion.div>
+          </div>
 
-          <motion.p {...reveal} transition={{ delay: .08, duration: .6 }} className="v2-hello">
+          <p className="v2-hello">
             Hello, I&apos;m Sandeep Thapa Magar.
-          </motion.p>
+          </p>
 
-          <motion.h1 {...reveal} transition={{ delay: .14, duration: .7 }}>
-            I turn ambitious ideas into <em>working systems.</em>
-          </motion.h1>
+          <h1>
+            <span>I turn ambitious</span>{" "}
+            <span>ideas into</span>{" "}
+            <LoopingEmphasis />
+          </h1>
 
-          <motion.div {...reveal} transition={{ delay: .22, duration: .6 }} className="v2-hero-bottom">
+          <div className="v2-hero-bottom">
             <p>
               Chief Operating Officer, product builder, and software engineer connecting
               people, strategy, and technology to move work forward.
             </p>
             <div className="v2-actions">
-              <a className="v2-primary" href="/work">Explore my work <ArrowUpRight /></a>
-              <a className="v2-secondary" href="/Sandeep-Thapa-Magar-CV.pdf" download><Download /> Download CV</a>
+              <Link className="v2-primary" href="/work">Explore my work <ArrowUpRight /></Link>
+              <a className="v2-secondary" href="/Sandeep-Thapa-Magar-CV.pdf" download>Download CV <Download aria-hidden="true" /></a>
             </div>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          className="v2-portrait"
-          initial={{ opacity: 0, scale: .95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ delay: .2, duration: .8 }}
-        >
+        <div className="v2-portrait">
           <div className="v2-portrait-outline" />
           <div className="v2-portrait-photo">
             <Image
-              src="/assets/sandeep-portrait.png"
-              alt="Sandeep Thapa Magar overlooking Kathmandu"
+              src="/assets/sandeep-portrait.webp"
+              alt="Sandeep Thapa Magar seated outdoors"
               fill
               priority
               sizes="(max-width: 800px) 90vw, 36vw"
@@ -80,7 +59,7 @@ export default function Home() {
             <strong>Operations × Product × Engineering</strong>
           </div>
           <div className="v2-portrait-number">STM / 01</div>
-        </motion.div>
+        </div>
 
         <div className="v2-side-note">
           <span>Chief Operating Officer</span>
@@ -91,27 +70,21 @@ export default function Home() {
         <a className="v2-scroll" href="#profile"><span>Scroll</span><ArrowDown /></a>
       </section>
 
-      <section className="v2-ticker" aria-label="Professional disciplines">
-        <div>
-          {["Operations Leadership", "Product Strategy", "Software Engineering", "Remote Team Leadership", "Workflow Design", "Full-Stack Development"].map(item => (
-            <span key={item}><Sparkles />{item}</span>
-          ))}
-        </div>
-      </section>
+      <DisciplineTicker />
 
-      <section id="profile" className="v2-profile">
+      <section id="profile" className="v2-profile" data-reveal>
         <div className="v2-section-label"><span>01</span><p>Profile</p></div>
         <div className="v2-profile-main">
-          <p className="v2-profile-lead">
+          <h2 className="v2-profile-lead">
             I work at the intersection of <em>people, products, and technology.</em>
-          </p>
+          </h2>
           <div className="v2-profile-copy">
             <p>
               I take unstructured problems, understand the process behind them, and create
               the clarity teams need to execute. That might mean improving an operation,
               shaping a product, training a team, or building the software itself.
             </p>
-            <a href="/about">Discover my approach <ArrowRight /></a>
+            <Link href="/about">Discover my approach <ArrowRight /></Link>
           </div>
         </div>
         <div className="v2-capabilities">
@@ -121,7 +94,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="v2-work">
+      <section className="v2-work" data-reveal>
         <div className="v2-work-heading">
           <div className="v2-section-label"><span>02</span><p>Selected work</p></div>
           <h2>Products with a reason to <em>exist.</em></h2>
@@ -129,34 +102,37 @@ export default function Home() {
         </div>
 
         <div className="v2-projects">
-          <a className="v2-project v2-mech" href="/work#mech-hevan">
+          <Link className="v2-project v2-mech" href="/work#mech-hevan" style={{ "--stagger": "0ms" } as React.CSSProperties}>
             <div className="v2-project-meta"><span>01</span><p>Founder & Tech Lead</p><ArrowUpRight /></div>
-            <div className="v2-project-visual">
-              <div className="v2-browser-bar"><i /><i /><i /><span>mechhevan.com</span></div>
-              <div className="v2-mech-type">THE<br />PERFECT <em>FEEL.</em></div>
-              <div className="v2-keyboard">{Array.from({ length: 42 }).map((_, i) => <i key={i} />)}</div>
-            </div>
-            <div className="v2-project-copy"><div><small>FULL-STACK E-COMMERCE</small><h3>Mech Hevan</h3></div><p>A specialised commerce platform for Nepal&apos;s mechanical keyboard community.</p></div>
-          </a>
-
-          <a className="v2-project v2-ems" href="/work#employee-management-system">
-            <div className="v2-project-meta"><span>02</span><p>Product Planner & Full-Stack Developer</p><ArrowUpRight /></div>
-            <div className="v2-project-visual">
-              <div className="v2-dashboard-nav"><strong>STM<span>WORK</span></strong><i>Overview</i><i>People</i><i>Projects</i></div>
-              <div className="v2-dashboard-body">
-                <small>MONDAY, 08:42</small><h4>Good morning, Sandeep.</h4>
-                <div className="v2-dash-metrics"><i /><i /><i /></div>
-                <div className="v2-dash-chart">{[45,70,53,88,62,91,76].map((height, i) => <i key={i} style={{ height: `${height}%` }} />)}</div>
+            <div className="v2-project-visual v2-private-preview v2-commerce-preview">
+              <span>Specialised commerce platform</span>
+              <div>
+                <strong>Mechanical-keyboard commerce, focused.</strong>
+                <p>New gear · Certified pre-owned · Sell your gear · Product requests</p>
               </div>
+              <small>Designed for the Nepalese market</small>
             </div>
-            <div className="v2-project-copy"><div><small>WORKFORCE OPERATIONS</small><h3>Employee Management System</h3></div><p>One structured platform for the daily operations of remote teams.</p></div>
-          </a>
+            <div className="v2-project-copy"><div><small>SPECIALISED COMMERCE</small><h3>Mech Hevan</h3></div><p>A commerce platform for mechanical keyboards and related gear in Nepal, shaped across product direction and full-stack development.</p></div>
+          </Link>
+
+          <Link className="v2-project v2-ems" href="/work#employee-management-system" style={{ "--stagger": "60ms" } as React.CSSProperties}>
+            <div className="v2-project-meta"><span>02</span><p>Product Planner & Full-Stack Developer</p><ArrowUpRight /></div>
+            <div className="v2-project-visual v2-private-preview">
+              <span>Private internal platform</span>
+              <div>
+                <strong>Remote-team operations, connected.</strong>
+                <p>Attendance · Projects · Work logs · Leave · Reporting</p>
+              </div>
+              <small>No public interface shown</small>
+            </div>
+            <div className="v2-project-copy"><div><small>INTERNAL OPERATIONS</small><h3>Employee Management System</h3></div><p>A private platform that brings recurring remote-team workflows into one access-controlled system.</p></div>
+          </Link>
         </div>
 
-        <a className="v2-all-work" href="/work">View project summaries <ArrowRight /></a>
+        <Link className="v2-all-work" href="/work">View project summaries <ArrowRight /></Link>
       </section>
 
-      <section className="v2-experience">
+      <section className="v2-experience" data-reveal>
         <div className="v2-section-label"><span>03</span><p>Experience</p></div>
         <div className="v2-experience-grid">
           <div>
@@ -168,19 +144,23 @@ export default function Home() {
             Overseeing business operations, project delivery, team coordination,
             internal workflows, and organisational execution within a technology company.
           </p>
-          <a href="/experience">View the full journey <ArrowUpRight /></a>
+          <Link href="/experience">View the full journey <ArrowUpRight /></Link>
         </div>
-        <div className="v2-role-words">
-          <span>Lead</span>
-          <span>Plan</span>
-          <span>Build</span>
-          <span>Enable</span>
+        <div className="v2-experience-focus" aria-label="Current areas of responsibility">
+          <span><b>01</b>Business operations</span>
+          <span><b>02</b>Project delivery</span>
+          <span><b>03</b>Team coordination</span>
+          <span><b>04</b>Workflow improvement</span>
         </div>
       </section>
 
-      <section className="v2-contact">
-        <div><span>Have an idea or opportunity?</span><p>Let&apos;s make it real.</p></div>
-        <a href="/contact">Start a conversation <ArrowUpRight /></a>
+      <section className="v2-contact" data-reveal>
+        <div>
+          <span>Have an idea or opportunity?</span>
+          <p>Let&apos;s make it real.</p>
+          <small>Operations, product, engineering, or a meaningful opportunity—I&apos;m open to the conversation.</small>
+        </div>
+        <Link href="/contact">Start a conversation <ArrowUpRight /></Link>
       </section>
 
       <SiteFooter />

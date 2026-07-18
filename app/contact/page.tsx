@@ -1,27 +1,25 @@
-"use client";
-
-import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
-import { useState } from "react";
-import { SiteFooter, SiteNav } from "../components/SiteChrome";
+import { ArrowUpRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { SiteFooter } from "../components/SiteFooter";
+import { SiteHeader } from "../components/SiteHeader";
+import { profile } from "../content/site";
 
 export default function ContactPage() {
-  const [pointer,setPointer]=useState({x:50,y:50});
   return (
-    <main>
-      <SiteNav />
-      <section className="contact-page" onMouseMove={e=>{const r=e.currentTarget.getBoundingClientRect();setPointer({x:(e.clientX-r.left)/r.width*100,y:(e.clientY-r.top)/r.height*100})}}>
-        <div className="contact-page-orbit" style={{left:`${pointer.x}%`,top:`${pointer.y}%`}}/>
+    <main id="main-content" tabIndex={-1}>
+      <SiteHeader />
+      <section className="contact-page" data-reveal data-backdrop="CONTACT">
         <div className="eyebrow"><span>05</span>Contact</div>
-        <h1>Have an idea, opportunity, or <em>problem worth solving?</em></h1>
+        <h1>Let&apos;s discuss the work that needs <em>moving forward.</em></h1>
         <div className="contact-page-grid">
-          <div><p>I&apos;m open to meaningful conversations around leadership, digital products, software development, operations, and professional opportunities.</p><a className="contact-email" href="mailto:sandeepthapa520@gmail.com">sandeepthapa520@gmail.com <ArrowUpRight/></a></div>
+          <div><p>I&apos;m open to conversations about operations leadership, product collaboration, software projects, and professional opportunities. Email is the most direct way to reach me.</p><a className="contact-email" href={`mailto:${profile.email}`}>{profile.email} <ArrowUpRight aria-hidden="true"/></a></div>
           <div className="contact-cards">
-            <a href="mailto:sandeepthapa520@gmail.com"><Mail/><span><small>Email</small>Write to me</span><ArrowUpRight/></a>
-            <a href="https://www.linkedin.com/in/sandeep-thapa-magar-a907a3282/" target="_blank" rel="noreferrer"><Linkedin/><span><small>LinkedIn</small>Sandeep Thapa Magar</span><ArrowUpRight/></a>
-            <a href="https://github.com/sandeepThapaMagar520" target="_blank" rel="noreferrer"><Github/><span><small>GitHub</small>sandeepThapaMagar520</span><ArrowUpRight/></a>
-            <div><MapPin/><span><small>Location</small>Kathmandu, Nepal</span></div>
+            <a href="mailto:sandeepthapa520@gmail.com"><Mail aria-hidden="true"/><span><small>Email</small>Write to me</span><ArrowUpRight aria-hidden="true"/></a>
+            <a href="https://www.linkedin.com/in/sandeep-thapa-magar-a907a3282/" target="_blank" rel="noopener noreferrer"><Linkedin aria-hidden="true"/><span><small>LinkedIn · New tab</small>Sandeep Thapa Magar <span className="sr-only">(opens in a new tab)</span></span><ArrowUpRight aria-hidden="true"/></a>
+            <a href="https://github.com/sandeepThapaMagar520" target="_blank" rel="noopener noreferrer"><Github aria-hidden="true"/><span><small>GitHub · New tab</small>sandeepThapaMagar520 <span className="sr-only">(opens in a new tab)</span></span><ArrowUpRight aria-hidden="true"/></a>
+            <a href="/Sandeep-Thapa-Magar-CV.pdf" download><Download aria-hidden="true"/><span><small>Resume · PDF</small>Download resume</span><ArrowUpRight aria-hidden="true"/></a>
           </div>
         </div>
+        <div className="contact-page-context">Kathmandu, Nepal <span /> Available for meaningful opportunities</div>
       </section>
       <SiteFooter />
     </main>
