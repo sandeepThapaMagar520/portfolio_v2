@@ -11,7 +11,7 @@ export default function WorkPage() {
     <main id="main-content" tabIndex={-1}>
       <SiteHeader />
       <PageIntro
-        number="01"
+        number="02"
         label="Selected Work"
         backdrop="WORK"
         context="Selected product case studies"

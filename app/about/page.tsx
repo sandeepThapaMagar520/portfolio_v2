@@ -9,7 +9,7 @@ export default function AboutPage() {
   return (
     <main id="main-content" tabIndex={-1}>
       <SiteHeader />
-      <PageIntro number="02" label="About" backdrop="ABOUT" context="People × Product × Technology" title={<>I work where people, products, and <em>technology meet.</em></>} copy="A multidisciplinary technology professional focused on making teams, products, and systems work better together." />
+      <PageIntro number="01" label="About" backdrop="ABOUT" context="People × Product × Technology" title={<>I work where people, products, and <em>technology meet.</em></>} copy="A multidisciplinary technology professional focused on making teams, products, and systems work better together." />
       <section className="about-page-story section-shell" data-reveal>
         <div className="about-page-image"><Image src="/assets/sandeep-portrait.webp" alt="Sandeep Thapa Magar seated outdoors" fill sizes="(max-width: 760px) calc(100vw - 36px), 45vw" /></div>
         <div>

@@ -75,8 +75,8 @@ export function MobileNavigation() {
             <button ref={closeRef} onClick={close} aria-label="Close navigation menu"><X aria-hidden="true" /></button>
           </div>
           <nav>
-            {navigation.map(({ label, href }, index) => (
-              <Link key={href} href={href} onClick={close}><span>0{index + 1}</span>{label}<ArrowUpRight aria-hidden="true" /></Link>
+            {navigation.map(({ number, label, href }) => (
+              <Link key={href} href={href} onClick={close}><span>{number}</span>{label}<ArrowUpRight aria-hidden="true" /></Link>
             ))}
           </nav>
           <div className="mobile-menu-footer"><a href={`mailto:${profile.email}`}>{profile.email}</a><span>{profile.location}</span></div>

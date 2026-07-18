@@ -1,9 +1,9 @@
 export const navigation = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Work", href: "/work" },
-  { label: "Experience", href: "/experience" },
-  { label: "Contact", href: "/contact" },
+  { number: "00", label: "Home", href: "/" },
+  { number: "01", label: "About", href: "/about" },
+  { number: "02", label: "Work", href: "/work" },
+  { number: "03", label: "Experience", href: "/experience" },
+  { number: "04", label: "Contact", href: "/contact" },
 ] as const;
 
 export const profile = {

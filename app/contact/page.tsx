@@ -8,7 +8,7 @@ export default function ContactPage() {
     <main id="main-content" tabIndex={-1}>
       <SiteHeader />
       <section className="contact-page" data-reveal data-backdrop="CONTACT">
-        <div className="eyebrow"><span>05</span>Contact</div>
+        <div className="eyebrow"><span>04</span>Contact</div>
         <h1>Let&apos;s discuss the work that needs <em>moving forward.</em></h1>
         <div className="contact-page-grid">
           <div><p>I&apos;m open to conversations about operations leadership, product collaboration, software projects, and professional opportunities. Email is the most direct way to reach me.</p><a className="contact-email" href={`mailto:${profile.email}`}>{profile.email} <ArrowUpRight aria-hidden="true"/></a></div>
