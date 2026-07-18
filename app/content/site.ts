@@ -7,7 +7,7 @@ export const navigation = [
 ] as const;
 
 export const profile = {
-  email: "sandeepthapa520@gmail.com",
+  email: "connect@sandeepthapamagar.com.np",
   location: "Kathmandu, Nepal",
   cv: "/Sandeep-Thapa-Magar-CV.pdf",
   whatsapp: "https://wa.me/9779864057456",
