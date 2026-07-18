@@ -144,7 +144,7 @@ export default function Home() {
             Overseeing business operations, project delivery, team coordination,
             internal workflows, and organisational execution within a technology company.
           </p>
-          <Link href="/experience#main-content" scroll>
+          <Link href="/experience#experience-top" scroll>
             View the full journey <ArrowUpRight />
           </Link>
         </div>

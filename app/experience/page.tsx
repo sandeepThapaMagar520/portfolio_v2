@@ -7,6 +7,7 @@ import { experience } from "../content/experience";
 export default function ExperiencePage() {
   return (
     <main id="main-content" tabIndex={-1}>
+      <span id="experience-top" className="page-top-anchor" aria-hidden="true" />
       <SiteHeader />
       <PageIntro number="03" label="Experience" backdrop="EXPERIENCE" context="Operations × Leadership × Engineering" title={<>Leadership, technology, and <em>execution.</em></>} copy="A career shaped by taking responsibility, enabling people, improving systems, and delivering practical results." />
       <section className="experience-page section-shell">
