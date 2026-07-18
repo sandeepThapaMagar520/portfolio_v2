@@ -20,7 +20,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="principle-page section-shell" data-reveal>
-        <div className="eyebrow"><span>01</span>Working principles</div>
+        <h2 className="eyebrow"><span>01</span>Working principles</h2>
         <div className="principles">
           {principles.map((item, index) => <article key={item.title} className={`principle principle-${index+1}`}><span>{item.number}</span><div><h3>{item.title}</h3><p>{item.description}</p><small>{item.note}</small></div><i>{item.symbol}</i></article>)}
         </div>
@@ -33,7 +33,7 @@ export default function AboutPage() {
         </div>
       </section>
       <section className="education-section section-shell" data-reveal>
-        <div className="eyebrow"><span>03</span>Education</div>
+        <h2 className="eyebrow"><span>03</span>Education</h2>
         <div className="education-grid">
           <article><span>COMPLETED</span><h3>BSc (Hons)<br />Computing</h3><p>Islington College<br />Kathmandu, Nepal</p><i>01</i></article>
           <article><span>COMPLETED</span><h3>School Leaving<br />Certification</h3><p>Oxford College of Engineering and Management<br />Gaidakot, Nawalpur</p><i>02</i></article>

@@ -17,6 +17,7 @@ export default function ExperiencePage() {
             Download CV <Download aria-hidden="true" />
           </a>
         </div>
+        <h2 className="sr-only">Professional experience timeline</h2>
         <div className="timeline">
           <div className="timeline-rail"><i /></div>
           {experience.map((job,index)=><article key={`${job.role}-${job.company}`} className={`${job.current?"current":""} role-${job.emphasis}`} data-reveal style={{ "--reveal-delay": `${Math.min(index * 55, 165)}ms` } as React.CSSProperties}>

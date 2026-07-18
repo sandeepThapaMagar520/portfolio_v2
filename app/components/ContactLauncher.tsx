@@ -36,8 +36,8 @@ export function ContactLauncher() {
           <a className="contact-option whatsapp" href={profile.whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden="true" /><span><strong>WhatsApp</strong><small>Message me directly</small></span><ArrowUpRight aria-hidden="true" /></a>
           <a className="contact-option" href={`mailto:${profile.email}`}><Mail aria-hidden="true" /><span><strong>Email</strong><small>For detailed enquiries</small></span><ArrowUpRight aria-hidden="true" /></a>
           <div className="contact-socials" aria-label="Social profiles">
-            <a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><Linkedin aria-hidden="true" /></a>
-            <a href={profile.social.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><Github aria-hidden="true" /></a>
+            <a href={profile.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Visit Sandeep Thapa Magar on LinkedIn (opens in a new tab)"><Linkedin aria-hidden="true" /></a>
+            <a href={profile.social.github} target="_blank" rel="noopener noreferrer" aria-label="View Sandeep Thapa Magar’s GitHub profile (opens in a new tab)"><Github aria-hidden="true" /></a>
             <a href={profile.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)"><Instagram aria-hidden="true" /></a>
           </div>
         </div>
