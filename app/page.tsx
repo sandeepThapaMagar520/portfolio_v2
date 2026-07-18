@@ -98,34 +98,34 @@ export default function Home() {
         <div className="v2-work-heading">
           <div className="v2-section-label"><span>02</span><p>Selected work</p></div>
           <h2>Products with a reason to <em>exist.</em></h2>
-          <p>Two products shaped from business idea to working software.</p>
+          <p>Two products presented with clear status, ownership, and privacy boundaries.</p>
         </div>
 
         <div className="v2-projects">
           <Link className="v2-project v2-mech" href="/work#mech-hevan" style={{ "--stagger": "0ms" } as React.CSSProperties}>
-            <div className="v2-project-meta"><span>01</span><p>Founder & Tech Lead</p><ArrowUpRight /></div>
+            <div className="v2-project-meta"><span>01</span><p>Founder / Product / Engineering</p><ArrowUpRight /></div>
             <div className="v2-project-visual v2-private-preview v2-commerce-preview">
-              <span>Specialised commerce platform</span>
+              <span>Under construction</span>
               <div>
-                <strong>Mechanical-keyboard commerce, focused.</strong>
-                <p>New gear · Certified pre-owned · Sell your gear · Product requests</p>
+                <strong>Mechanical-gear commerce, in development.</strong>
+                <p>Building a specialised commerce platform for mechanical gear and enthusiast accessories in Nepal.</p>
               </div>
-              <small>Designed for the Nepalese market</small>
+              <small>Independent product · Nepal</small>
             </div>
-            <div className="v2-project-copy"><div><small>SPECIALISED COMMERCE</small><h3>Mech Hevan</h3></div><p>A commerce platform for mechanical keyboards and related gear in Nepal, shaped across product direction and full-stack development.</p></div>
+            <div className="v2-project-copy"><div><small>UNDER CONSTRUCTION</small><h3>Mech Hevan</h3></div><p>An independent specialised-commerce product currently being designed and developed for Nepal.</p></div>
           </Link>
 
           <Link className="v2-project v2-ems" href="/work#employee-management-system" style={{ "--stagger": "60ms" } as React.CSSProperties}>
-            <div className="v2-project-meta"><span>02</span><p>Product Planner & Full-Stack Developer</p><ArrowUpRight /></div>
+            <div className="v2-project-meta"><span>02</span><p>Product planning / Engineering</p><ArrowUpRight /></div>
             <div className="v2-project-visual v2-private-preview">
-              <span>Private internal platform</span>
+              <span>Private internal project</span>
               <div>
-                <strong>Remote-team operations, connected.</strong>
-                <p>Attendance · Projects · Work logs · Leave · Reporting</p>
+                <strong>Recurring internal workflows, consolidated.</strong>
+                <p>An internal system designed to consolidate recurring remote-team operations.</p>
               </div>
-              <small>No public interface shown</small>
+              <small>Interfaces and operational details withheld</small>
             </div>
-            <div className="v2-project-copy"><div><small>INTERNAL OPERATIONS</small><h3>Employee Management System</h3></div><p>A private platform that brings recurring remote-team workflows into one access-controlled system.</p></div>
+            <div className="v2-project-copy"><div><small>PRIVATE INTERNAL PROJECT</small><h3>Employee Management System</h3></div><p>A role-controlled internal system presented without organisational data, metrics, or implementation details.</p></div>
           </Link>
         </div>
 
